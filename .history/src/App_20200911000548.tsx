@@ -60,17 +60,7 @@ function App() {
       </table>
 
       <hr />
-      <h3 className='text-center mb-5'>History</h3>
-
-      <table className='table text-center'>
-        <thead className='table-light'>
-          <tr>
-            <th>Staff</th>
-            <th>Clocked in</th>
-            <th>Clocked out</th>
-          </tr>
-        </thead>
-      </table>
+      <h3 className='text-center'>History</h3>
     </div>
   );
 }

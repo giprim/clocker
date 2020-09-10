@@ -77,8 +77,7 @@ table {
   width: 100%;
 }
 
-th,
-td {
+table tr td {
   padding-top: 25px;
 }
 
@@ -94,22 +93,11 @@ hr {
 .staff {
   font-family: Work Sans;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 20px;
   line-height: 23px;
+  display: flex;
+  align-items: center;
 
   color: #333333;
-}
-
-th {
-  font-family: Work Sans;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 25px;
-  line-height: 29px;
-  color: #4d4d4d;
-}
-
-.table > :not(caption) > * > * {
-  padding: 1rem;
 }

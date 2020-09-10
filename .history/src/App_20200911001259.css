@@ -109,7 +109,3 @@ th {
   line-height: 29px;
   color: #4d4d4d;
 }
-
-.table > :not(caption) > * > * {
-  padding: 1rem;
-}

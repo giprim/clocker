@@ -62,8 +62,8 @@ function App() {
       <hr />
       <h3 className='text-center mb-5'>History</h3>
 
-      <table className='table text-center'>
-        <thead className='table-light'>
+      <table className='table'>
+        <thead className='table-light p-4'>
           <tr>
             <th>Staff</th>
             <th>Clocked in</th>

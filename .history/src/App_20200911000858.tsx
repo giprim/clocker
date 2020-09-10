@@ -62,7 +62,7 @@ function App() {
       <hr />
       <h3 className='text-center mb-5'>History</h3>
 
-      <table className='table text-center'>
+      <table className='table'>
         <thead className='table-light'>
           <tr>
             <th>Staff</th>
