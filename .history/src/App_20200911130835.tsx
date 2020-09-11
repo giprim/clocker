@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 
 function App() {
-  const [getDate, setDate] = useState<string>();
-  const [getTime, setTime] = useState<string>();
-
   const currentTime = () => {
     let date = new Date();
     let hour = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
@@ -12,36 +9,13 @@ function App() {
       date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
     return `${hour}:${minute} ${hour > 12 ? 'PM' : 'AM'}`;
   };
-
   const currentDate = () => {
-    const monthNames = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ];
-
-    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
     let date = new Date();
-
-    return `${dayNames[date.getDay()]} ${
-      monthNames[date.getMonth()]
-    } ${date.getDate()}`;
+    let month = date.getUTCDate();
+    console.log(month);
   };
-
-  setInterval(() => {
-    setDate(currentDate());
-    setTime(currentTime());
-  }, 500);
+  currentDate();
+  console.log(currentTime());
 
   return (
     <div className='container py-4'>
@@ -49,10 +23,12 @@ function App() {
       <div className='clock-box effect p-2 py-md-5 mt-4'>
         <div className='row'>
           <div className='col-12'>
-            <h4 className='display-3 text-center'>{getTime}</h4>
+            <h4 className='display-3 text-center'>
+              {currentTime().toString()}
+            </h4>
           </div>
           <div className='col-12 text-center mt-2 mb-1'>
-            <h6>{getDate}</h6>
+            <h6>Thu. september 10</h6>
           </div>
         </div>
       </div>

@@ -32,10 +32,10 @@ function App() {
     const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
     let date = new Date();
+    let month = date.getMonth();
+    let day = date.getDay();
 
-    return `${dayNames[date.getDay()]} ${
-      monthNames[date.getMonth()]
-    } ${date.getDate()}`;
+    return `${dayNames[day]} ${monthNames[month]} ${date.getDate()}`;
   };
 
   setInterval(() => {

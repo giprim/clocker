@@ -29,13 +29,13 @@ function App() {
       'December',
     ];
 
-    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const dayNames = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
     let date = new Date();
+    let month = date.getMonth();
+    let day = date.getDay();
 
-    return `${dayNames[date.getDay()]} ${
-      monthNames[date.getMonth()]
-    } ${date.getDate()}`;
+    return `${dayNames[day]} ${monthNames[month]} ${date.getDate()}`;
   };
 
   setInterval(() => {
@@ -52,7 +52,7 @@ function App() {
             <h4 className='display-3 text-center'>{getTime}</h4>
           </div>
           <div className='col-12 text-center mt-2 mb-1'>
-            <h6>{getDate}</h6>
+            <h6>Thu. september 10</h6>
           </div>
         </div>
       </div>
