@@ -1,11 +1,43 @@
 import React, { useState } from 'react';
 import './App.css';
 import StaffClocker from './component/staffClocker';
-import { currentDate, currentTime } from './dateTime';
 
 function App() {
   const [getDate, setDate] = useState<string>();
   const [getTime, setTime] = useState<string>();
+
+  const currentTime = () => {
+    let date = new Date();
+    let hour = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+    let minute =
+      date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+    return `${hour}:${minute} ${hour > 12 ? 'PM' : 'AM'}`;
+  };
+
+  const currentDate = () => {
+    const monthNames = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+
+    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    let date = new Date();
+
+    return `${dayNames[date.getDay()]} ${
+      monthNames[date.getMonth()]
+    } ${date.getDate()}`;
+  };
 
   setInterval(() => {
     setDate(currentDate());
@@ -42,14 +74,8 @@ function App() {
               </tr>
             </thead>
             <tbody>
-              <StaffClocker
-                staff={{ user: 'john' }}
-                timer={`${getDate} ${getTime}`}
-              />
-              <StaffClocker
-                staff={{ user: 'Doe' }}
-                timer={`${getDate} ${getTime}`}
-              />
+              <StaffClocker />
+              <StaffClocker />
             </tbody>
           </table>
         </div>
